@@ -182,7 +182,7 @@ export const SignInView = () => {
             </form>
           </Form>
 
-          <div className="bg-radial from-[#335edd] to-[#2f2da2] relative hidden md:flex flex-col gap-y-4 items-center justify-center">
+          <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex flex-col gap-y-4 items-center justify-center">
             <Image
               src="/logo.svg"
               alt="Prodius Ai logo"
