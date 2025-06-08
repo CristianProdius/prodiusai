@@ -27,7 +27,7 @@ const firstSection = [
   },
   {
     icon: BotIcon,
-    label: "Agents",
+    label: "AI Customers",
     href: "/agents",
   },
 ];
