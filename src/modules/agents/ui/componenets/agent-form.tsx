@@ -42,6 +42,21 @@ export const AgentForm = ({
           trcp.agents.getMany.queryOptions({})
         );
 
+        onSuccess?.();
+      },
+      onError: (error) => {
+        toast.error(error.message);
+      },
+    })
+  );
+
+  const updateAgent = useMutation(
+    trcp.agents.update.mutationOptions({
+      onSuccess: async () => {
+        await queryClient.invalidateQueries(
+          trcp.agents.getMany.queryOptions({})
+        );
+
         if (initialValues?.id) {
           await queryClient.invalidateQueries(
             trcp.agents.getOne.queryOptions({ id: initialValues.id })
@@ -65,11 +80,14 @@ export const AgentForm = ({
   });
 
   const isEdit = !!initialValues?.id;
-  const isPending = createAgent.isPending;
+  const isPending = createAgent.isPending || updateAgent.isPending;
 
   const onSubmit = (values: z.infer<typeof agentsInsertSchema>) => {
     if (isEdit) {
-      console.log("Editing agent:", values);
+      updateAgent.mutate({
+        ...values,
+        id: initialValues.id,
+      });
     } else {
       createAgent.mutate(values);
     }
