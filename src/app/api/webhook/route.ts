@@ -1,3 +1,4 @@
+export const runtime = "nodejs";
 import { db } from "@/db";
 import { agents, meetings } from "@/db/schema";
 import { inngest } from "@/inngest/client";
@@ -98,7 +99,9 @@ export async function POST(req: NextRequest) {
     });
 
     realtimeClient.updateSession({
-      instructions: existingAgent.instructions,
+      instructions: `${existingAgent.instructions}
+  
+  REMEMBER: You are already in a sales meeting. Start by greeting the salesperson professionally and wait for them to begin their pitch. Do NOT offer help or ask open-ended assistant questions.`,
     });
   } else if (eventType === "call.session_participant_left") {
     const event = payload as CallSessionParticipantLeftEvent;
