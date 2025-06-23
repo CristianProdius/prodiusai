@@ -45,7 +45,9 @@ export const meetingsProcessing = inngest.createFunction(
     });
 
     const transcriptWithSpeaker = await step.run("add-speakers", async () => {
-      const speakerIds = [...new Set(transcript.map((item) => item.speker_id))];
+      const speakerIds = [
+        ...new Set(transcript.map((item) => item.speaker_id)),
+      ];
 
       const userSpeakers = await db
         .select()
@@ -63,7 +65,7 @@ export const meetingsProcessing = inngest.createFunction(
 
       return transcript.map((item) => {
         const speaker = speakers.find(
-          (speaker) => speaker.id === item.speker_id
+          (speaker) => speaker.id === item.speaker_id
         );
 
         if (!speaker) {
