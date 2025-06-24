@@ -39,6 +39,10 @@ export const AgentIdView = ({ agentId }: Props) => {
         await queryClient.invalidateQueries(
           trcp.agents.getMany.queryOptions({})
         );
+
+        await queryClient.invalidateQueries(
+          trcp.premium.getFreeUsage.queryOptions()
+        );
         router.push("/agents");
       },
 

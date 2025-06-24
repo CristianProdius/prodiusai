@@ -1,6 +1,6 @@
 import { useTRPC } from "@/trpc/client";
 import { AgentGetOne } from "../../types";
-import { useRouter } from "next/router";
+
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { z } from "zod";
 import { agentsInsertSchema } from "../../schemas";
@@ -19,6 +19,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { useRouter } from "next/navigation";
 
 interface AgentFormProps {
   onSuccess: () => void;
@@ -32,7 +34,7 @@ export const AgentForm = ({
   initialValues,
 }: AgentFormProps) => {
   const trcp = useTRPC();
-
+  const router = useRouter();
   const queryClient = useQueryClient();
 
   const createAgent = useMutation(
@@ -42,10 +44,17 @@ export const AgentForm = ({
           trcp.agents.getMany.queryOptions({})
         );
 
+        await queryClient.invalidateQueries(
+          trcp.premium.getFreeUsage.queryOptions()
+        );
+
         onSuccess?.();
       },
       onError: (error) => {
         toast.error(error.message);
+        if (error.data?.code === "FORBIDDEN") {
+          router.push("/upgrade");
+        }
       },
     })
   );
@@ -122,10 +131,13 @@ export const AgentForm = ({
             <FormItem>
               <FormLabel>Instructions</FormLabel>
               <FormControl>
-                <Textarea
-                  {...field}
-                  placeholder="Pretend you are a customer in a sales call. Act naturally and respond as this type of customer would."
-                />
+                <ScrollArea className="h-[200px] w-full rounded-md border">
+                  <Textarea
+                    {...field}
+                    placeholder="Pretend you are a customer in a sales call. Act naturally and respond as this type of customer would."
+                    className="min-h-[200px] border-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-none"
+                  />
+                </ScrollArea>
               </FormControl>
               <FormMessage />
             </FormItem>
