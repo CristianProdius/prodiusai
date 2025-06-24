@@ -1,5 +1,5 @@
 import { auth } from "@/lib/auth";
-import { LandingView } from "@/modules/landing/ui/views/landing-view";
+import { LandingView } from "@/modules/landing/ui/views/landig-view";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
