@@ -1,4 +1,3 @@
-import { sum } from "drizzle-orm";
 import { pgTable, text, timestamp, boolean, pgEnum } from "drizzle-orm/pg-core";
 import { nanoid } from "nanoid";
 

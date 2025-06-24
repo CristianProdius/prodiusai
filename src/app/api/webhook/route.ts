@@ -18,7 +18,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { OpenAI } from "openai";
 import { ChatCompletionMessageParam } from "openai/resources/index.mjs";
-import { use } from "react";
 
 const openaiClient = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 

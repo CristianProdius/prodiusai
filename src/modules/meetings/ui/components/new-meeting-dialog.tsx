@@ -21,7 +21,8 @@ export const NewMeetingDialog = ({
     >
       <MeetingForm
         onSuccess={(id) => {
-          onOpenChange(false), router.push(`/meetings/${id}`);
+          onOpenChange(false);
+          router.push(`/meetings/${id}`);
         }}
         onCancel={() => onOpenChange(false)}
       />
