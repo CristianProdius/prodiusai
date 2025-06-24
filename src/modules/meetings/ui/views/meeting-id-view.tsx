@@ -9,7 +9,7 @@ import {
   useSuspenseQuery,
 } from "@tanstack/react-query";
 import { MeetingIdViewHeader } from "../components/meeting-id-view-header";
-import { trpc } from "@/trpc/server";
+
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useConfirm } from "@/hooks/use-confirm";
@@ -42,8 +42,13 @@ export const MeetingIdView = ({ meetingId }: Props) => {
 
   const removeMeeting = useMutation(
     trpc.meetings.remove.mutationOptions({
-      onSuccess: () => {
-        queryClient.invalidateQueries(trpc.meetings.getMany.queryOptions({}));
+      onSuccess: async () => {
+        await queryClient.invalidateQueries(
+          trpc.meetings.getMany.queryOptions({})
+        );
+        await queryClient.invalidateQueries(
+          trpc.premium.getFreeUsage.queryOptions()
+        );
         router.push("/meetings");
       },
       onError: (error) => {
