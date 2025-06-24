@@ -7,7 +7,7 @@ import avatar2 from "../assets/avatar-florence-shaw.jpg";
 import avatar3 from "../assets/avatar-lula-meyers.jpg";
 import Image from "next/image";
 import Avatar from "./Avatar";
-import { Users, BarChart3, MessageCircle } from "lucide-react";
+import { Users, BarChart3 } from "lucide-react";
 
 import { motion } from "framer-motion";
 
