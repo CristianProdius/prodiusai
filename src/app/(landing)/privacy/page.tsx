@@ -103,8 +103,8 @@ export default function PrivacyPolicyPage() {
                 hosting providers)
               </li>
               <li>
-                <strong>Your Organization:</strong> If you're part of a team
-                account, administrators can access team performance data
+                <strong>Your Organization:</strong> If you&apos;re part of a
+                team account, administrators can access team performance data
               </li>
               <li>
                 <strong>Legal Requirements:</strong> When required by law or to
@@ -197,7 +197,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-              9. Children's Privacy
+              9. Children&apos;s Privacy
             </h2>
             <p className="text-gray-700 mb-4">
               Our service is not intended for users under 18 years of age. We do
@@ -210,7 +210,8 @@ export default function PrivacyPolicyPage() {
             <p className="text-gray-700 mb-4">
               We may update this Privacy Policy from time to time. We will
               notify you of any material changes by posting the new Privacy
-              Policy on this page and updating the "Last updated" date.
+              Policy on this page and updating the &apos;Last updated&apos;
+              date.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">

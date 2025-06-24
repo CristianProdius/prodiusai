@@ -25,8 +25,9 @@ export default function TermsOfServicePage() {
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-8">
               <p className="text-gray-700 mb-0">
                 Welcome to our AI Sales Training Platform. These Terms of
-                Service ("Terms") govern your use of our services. By accessing
-                or using our platform, you agree to be bound by these Terms.
+                Service (&apos;Terms&apos;) govern your use of our services. By
+                accessing or using our platform, you agree to be bound by these
+                Terms.
               </p>
             </div>
 
@@ -223,10 +224,11 @@ export default function TermsOfServicePage() {
               Service Disclaimer
             </h3>
             <p className="text-gray-700 mb-4">
-              THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT
-              WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-              LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-              PURPOSE, OR NON-INFRINGEMENT.
+              THE SERVICE IS PROVIDED &apos;AS IS&apos; AND &apos;AS
+              AVAILABLE&apos; WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR
+              IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
+              MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
+              NON-INFRINGEMENT.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">
@@ -282,7 +284,7 @@ export default function TermsOfServicePage() {
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
               <li>We will notify you via email or in-app notification</li>
-              <li>You'll have 30 days to review the changes</li>
+              <li>You&apos;ll have 30 days to review the changes</li>
               <li>
                 Continued use after the effective date constitutes acceptance
               </li>
