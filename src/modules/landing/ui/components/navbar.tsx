@@ -8,9 +8,9 @@ import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "About Us", href: "/#about" },
+  { label: "Home", href: "/" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About Us", href: "/about" },
   {
     label: "Contact",
     href: "https://outlook.office.com/bookwithme/user/17505a49dd124eeeb13b8c8b62157c7d@prodiusenterprise.com/meetingtype/qQJ39XuYgkSawd8BIAFm1w2?anonymous&ismsaljsauthenabled&ep=mlink",
